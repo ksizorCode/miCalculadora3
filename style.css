@@ -1,0 +1,166 @@
+:root {
+    --bg-light: #f4f6f9;
+    --text-light: #333;
+    --btn-bg: #ffffff;
+    --btn-special: #e0e0e0;
+    --btn-operator: #ff9f0a;
+    --btn-operator-text: #ffffff;
+    --display-bg: #f4f6f9;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    --bg-dark: #121212;
+    --text-dark: #ffffff;
+    --btn-bg-dark: #333333;
+    --btn-special-dark: #505050;
+    --btn-operator-dark: #ff9f0a;
+    --display-bg-dark: #121212;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow: hidden;
+}
+
+.calculator {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 3rem;
+    word-break: break-all;
+    text-align: right;
+}
+
+.history {
+    font-size: 1.2rem;
+    color: #888;
+    min-height: 1.5rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--btn-bg);
+    color: var(--text-light);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+}
+
+.btn.special {
+    background-color: var(--btn-special);
+}
+
+.btn.operator {
+    background-color: var(--btn-operator);
+    color: var(--btn-operator-text);
+}
+
+.btn.equals {
+    background-color: var(--btn-operator);
+    color: var(--btn-operator-text);
+}
+
+.btn.zero {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    border-radius: 40px;
+}
+
+.scientific {
+    display: none; /* Hidden in portrait */
+}
+
+/* LANDSCAPE MODE & DARK THEME */
+@media (orientation: landscape) {
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+    }
+
+    .calculator {
+        max-width: none;
+        flex-direction: row;
+        padding: 10px;
+        align-items: stretch;
+    }
+
+    .display {
+        flex: 1;
+        justify-content: center;
+        font-size: 2.5rem;
+        padding-right: 40px;
+    }
+
+    .buttons {
+        flex: 2;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+    }
+
+    .btn {
+        aspect-ratio: auto;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        background-color: var(--btn-bg-dark);
+        color: var(--text-dark);
+    }
+
+    .btn.special {
+        background-color: var(--btn-special-dark);
+    }
+
+    .btn.scientific {
+        display: flex;
+        background-color: #212121;
+        color: #ff9f0a;
+        font-weight: bold;
+    }
+
+    .btn.zero {
+        grid-column: auto;
+    }
+}

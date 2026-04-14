@@ -1,0 +1,18 @@
+{
+    "name": "Smart Calculator PWA",
+    "short_name": "SmartCalc",
+    "description": "Una calculadora inteligente con modo científico y tema oscuro automático.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff9f0a",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

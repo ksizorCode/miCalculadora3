@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="history" id="history"></div>
+            <div class="current" id="current">0</div>
+        </div>
+        <div class="buttons">
+            <!-- Scientific Buttons (Visible only in Landscape) -->
+            <button class="btn scientific" data-action="sin">sin</button>
+            <button class="btn scientific" data-action="cos">cos</button>
+            <button class="btn scientific" data-action="tan">tan</button>
+            <button class="btn scientific" data-action="log">log</button>
+            <button class="btn scientific" data-action="ln">ln</button>
+            
+            <button class="btn scientific" data-action="pow">x²</button>
+            <button class="btn scientific" data-action="sqrt">√</button>
+            <button class="btn scientific" data-action="pi">π</button>
+            <button class="btn scientific" data-action="e">e</button>
+            <button class="btn scientific" data-action="factorial">!</button>
+
+            <!-- Standard Buttons -->
+            <button class="btn special" data-action="clear">AC</button>
+            <button class="btn special" data-action="delete">DEL</button>
+            <button class="btn special" data-action="percent">%</button>
+            <button class="btn operator" data-action="divide">÷</button>
+
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+            <button class="btn operator" data-action="multiply">×</button>
+
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+            <button class="btn operator" data-action="subtract">−</button>
+
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+            <button class="btn operator" data-action="add">+</button>
+
+            <button class="btn number zero">0</button>
+            <button class="btn number">.</button>
+            <button class="btn equals" data-action="equals">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
