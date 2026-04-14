@@ -137,8 +137,30 @@ const historyElement = document.getElementById('history');
 const currentElement = document.getElementById('current');
 const calculator = new Calculator(historyElement, currentElement);
 
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    const rect = button.getBoundingClientRect();
+    
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${event.clientX - rect.left - radius}px`;
+    ripple.style.top = `${event.clientY - rect.top - radius}px`;
+    ripple.classList.add('ripple');
+
+    const oldRipple = button.getElementsByClassName('ripple')[0];
+    if (oldRipple) {
+        oldRipple.remove();
+    }
+
+    button.appendChild(ripple);
+}
+
 document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+        createRipple(e);
         const action = button.dataset.action;
         const value = button.innerText;
 
